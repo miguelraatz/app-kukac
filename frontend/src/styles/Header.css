@@ -32,3 +32,9 @@
   color: var(--bg-text-color);
   font-size: 15px;
 }
+
+@media (min-width: 768px) {
+  .container-header h2 {
+    font-size: 28px;
+  }
+}
