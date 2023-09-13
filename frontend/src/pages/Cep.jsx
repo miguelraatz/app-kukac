@@ -6,7 +6,7 @@ import '../styles/Cep.css';
 function Cep() {
 
   const [ceps, setCeps] = useState([]);
-  const [result, setResult] = useState([]);
+  const [result] = useState([]);
 
   const handleChange = (e, index) => {
     const { value } = e.target;
