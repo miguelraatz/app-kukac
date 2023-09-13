@@ -1,8 +1,11 @@
 .square {
   animation: rotate 10s linear infinite;
   border: 3px solid var(--bg-text-color);
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: var(--main-text-color);
 }
 
 @keyframes rotate {
@@ -12,4 +15,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: var(--main-text-color);
+}
+
+.container-header h2 {
+  color: var(--bg-text-color);
+  font-size: 15px;
 }
