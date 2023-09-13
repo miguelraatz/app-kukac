@@ -50,16 +50,14 @@ function Garagem() {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <NavBar />
-      <form className="container-garagem">
-        <div className="container-title-garagem">
-          <h2>Garagem</h2>
-          <p>Preencha as informações do seu veículo.</p>
-        </div>
-        <div className="container-input-data">
-          <select onChange={ (e) => setVehicle(e.target.value) } name="select" id="select">
+      <form className="section-garagem">
+        <h2>Garagem</h2>
+        <p>Preencha as informações do seu veículo.</p>
+        <div className="container-inputs">
+          <select className="select-input" onChange={ (e) => setVehicle(e.target.value) } name="select" id="select">
             <option value="moto">Moto</option>
             <option value="carro">Carro</option>
           </select>
@@ -95,7 +93,7 @@ function Garagem() {
           />
           <button
             type="button"
-            className="btn-enviar-garagem"
+            className="btn-garagem"
             onClick={ (e) => handleClick(e) }
           >
             Enviar
@@ -103,7 +101,7 @@ function Garagem() {
         </div>
       </form>
       <ToastComponent />
-    </div>
+    </>
   )
 }
 
