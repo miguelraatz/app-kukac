@@ -37,6 +37,13 @@ function Garagem() {
   const handleClick = async (e) => {
     e.preventDefault();
     await fetchGaragem();
+    window.alert('Veículo cadastrado com sucesso!');
+    setVehicle('moto');
+    setYear('');
+    setDoors('');
+    setBrand('');
+    setPassengers('');
+    setModel('');
   }
 
   return (
@@ -50,16 +57,39 @@ function Garagem() {
         </div>
         <div className="container-input-data">
           <select onChange={ (e) => setVehicle(e.target.value) } name="select" id="select">
-            <option value="carro">Carro</option>
             <option value="moto">Moto</option>
+            <option value="carro">Carro</option>
           </select>
 
-          <input onChange={ (e) => setYear(e.target.value) } type="text" placeholder="Ano de fabricação" />
+          <input
+            value={year}
+            onChange={ (e) => setYear(e.target.value) }
+            type="text"
+            placeholder="Ano de fabricação"
+          />
           { vehicle === 'carro' ?
-          <input onChange={ (e) => setDoors(e.target.value) } type="text" placeholder="Quantidade de portas" /> :
-          <input onChange={ (e) => setPassengers(e.target.value) } type="text" placeholder="Quantidade de passageiros" /> }
-          <input onChange={ (e) => setModel(e.target.value) } type="text" placeholder="Modelo" />
-          <input onChange={ (e) => setBrand(e.target.value) } type="text" placeholder="Marca" />
+            <input 
+              onChange={ (e) => setDoors(e.target.value) }
+              type="text"
+              placeholder="Quantidade de portas"
+              value={doors}
+            /> : <input
+              onChange={ (e) => setPassengers(e.target.value) }
+              type="text"
+              placeholder="Quantidade de passageiros"
+              value={passengers}
+            /> }
+          <input
+            onChange={ (e) => setModel(e.target.value) }
+            type="text"
+            placeholder="Modelo"
+            value={model}
+          />
+          <input
+            onChange={ (e) => setBrand(e.target.value) }
+            type="text" placeholder="Marca"
+            value={brand}
+          />
           <button
             type="button"
             className="btn-enviar-garagem"

@@ -18,6 +18,10 @@ function Caixa() {
   
   const handleClick = async (e) => {
     e.preventDefault();
+    if (amountPaid < purchasePrice) {
+      window.alert('Valor pago menor que o valor da compra');
+      return;
+    }
     await fetchCaixa();
   }
 

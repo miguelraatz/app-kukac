@@ -15,6 +15,16 @@
   font-size: 40px;
 }
 
+.container-palindromos h3 {
+  color: var(--main-text-color);
+}
+
+.container-numbers-result {
+  display: flex;
+  width: 100%;
+  flex-flow: wrap;
+}
+
 .container-palindromos p {
   color: var(--main-text-color);
   font-size: 16px;
