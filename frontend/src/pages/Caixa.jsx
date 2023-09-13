@@ -16,13 +16,14 @@ function Caixa() {
   const fetchCaixa = async () => {
     const response = await requestApi('caixa', { purchase: purchasePrice, money: amountPaid });
     setResult(response)
-    console.log(result)
   }
   
   const handleClick = async (e) => {
     e.preventDefault();
-    if (amountPaid < purchasePrice) {
+    if (+amountPaid < +purchasePrice) {
       toast.error('Valor pago menor que o valor da compra');
+      setAmountPaid('');
+      setPurchasePrice('');
       return;
     }
     await fetchCaixa();
@@ -37,16 +38,14 @@ function Caixa() {
 
   return (
     <>
-      <div>
-        <Header />
-        <NavBar />
+      <Header />
+      <NavBar />
+      <div className="container-caixa">
         {Object.keys(result).length === 0 ? (
-        <section className="container-caixa">
-          <div className="container-caixa-title">
-            <h2>Caixa</h2>
-            <p>Digite o valor da compra e valor da venda.</p>
-          </div>
-          <div className="container-input-values">
+        <section className="section-caixa">
+          <h2>Caixa</h2>
+          <p>Digite o valor da compra e valor da venda.</p>
+          <div className="container-inputs">
             <input
               type="text"
               placeholder="Digite o valor da compra"
@@ -59,7 +58,7 @@ function Caixa() {
             />
             <button
               type="button"
-              className="btn-enviar-caixa"
+              className="btn-caixa"
               onClick={ (e) => handleClick(e) }
             >
               Enviar
@@ -68,16 +67,16 @@ function Caixa() {
         </section>
         ) : (
           <section className="container-caixa">
-            <div className="container-caixa-title">
+            <section className="section-caixa">
               <h2>Caixa</h2>
               <p>Troco</p>
-            </div>
+            </section>
               <h3>Total de notas de 1 real: {result[1]}</h3>
               <h3>Total de notas de 10 reais: {result[10]}</h3>
               <h3>Total de notas de 100 reais: {result[100]}</h3>
             <button
               type="button"
-              className="btn-enviar-caixa"
+              className="btn-caixa"
               onClick={ (e) => backButton(e) }
             >Voltar</button>
           </section>

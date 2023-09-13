@@ -52,3 +52,9 @@
   font-weight: 600;
   transition: .5s ease;
 }
+
+.container-numbers-result {
+  display: flex;
+  color: var(--main-text-color);
+  font-weight: 700;
+}
