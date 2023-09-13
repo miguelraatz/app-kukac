@@ -6,24 +6,33 @@ import requestApi from "../helpers/requestApi";
 
 function Caixa() {
 
-  const [purchasePrice, setPurchasePrice] = useState(0);
-  const [amountPaid, setAmountPaid] = useState(0);
-  const [result, setResult] = useState([]);
+  const [purchasePrice, setPurchasePrice] = useState('');
+  const [amountPaid, setAmountPaid] = useState('');
+  const [result, setResult] = useState({});
 
   const fetchCaixa = async () => {
-    const result = await requestApi('caixa', { purchase: purchasePrice, money: amountPaid });
-    setResult(result);
+    const response = await requestApi('caixa', { purchase: purchasePrice, money: amountPaid });
+    setResult(response);
+    console.log(response);
   }
   
   const handleClick = async (e) => {
     e.preventDefault();
     await fetchCaixa();
+    setPurchasePrice('');
+    setAmountPaid('');
+  }
+
+  const backButton = (e) => {
+    e.preventDefault();
+    setResult('');
   }
 
   return (
     <div>
       <Header />
       <NavBar />
+      {!result ? (
       <section className="container-caixa">
         <div className="container-caixa-title">
           <h2>Caixa</h2>
@@ -49,6 +58,22 @@ function Caixa() {
           </button>
         </div>
       </section>
+      ) : (
+        <section className="container-caixa">
+          <div className="container-caixa-title">
+            <h2>Caixa</h2>
+            <p>Troco</p>
+          </div>
+          <h3>Total de notas de 1 real: {result[1]}</h3>
+          <h3>Total de notas de 10 reais: {result[10]}</h3>
+          <h3>Total de notas de 100 reais: {result[100]}</h3>
+          <button
+            type="button"
+            className="btn-enviar-caixa"
+            onClick={ (e) => backButton(e) }
+          >Voltar</button>
+        </section>
+      )}
     </div>
   )
 }

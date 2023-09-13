@@ -60,3 +60,7 @@
 .btn-enviar-caixa:hover {
   box-shadow: none;
 }
+
+.container-caixa h3 {
+  color: var(--main-text-color);
+}
