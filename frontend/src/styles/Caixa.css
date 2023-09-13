@@ -1,0 +1,62 @@
+.container-caixa {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 79%;
+  height: 80vh;
+}
+
+.container-caixa-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-caixa-title h2 {
+  color: var(--bg-text-color);
+  font-size: 40px;
+}
+
+.container-caixa-title p {
+  color: var(--main-text-color);
+  font-size: 16px;
+}
+
+.container-input-values {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-input-values input {
+  background-color: white;
+  text-align: center;
+  height: 30px;
+  width: 180px;
+  border-radius: 1px;
+  margin: 0 10px;
+}
+
+.btn-enviar-caixa {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--bg-text-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--bg-text-color);
+  color: var(--main-text-color);
+  letter-spacing: .1rem;
+  font-weight: 600;
+  font-size: 16px;
+  transition: .5s ease;
+}
+
+.btn-enviar-caixa:hover {
+  box-shadow: none;
+}

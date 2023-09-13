@@ -1,0 +1,73 @@
+.container-garagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 79%;
+  height: 80vh;
+}
+
+.container-title-garagem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-title-garagem h2 {
+  color: var(--bg-text-color);
+  font-size: 40px;
+}
+
+.container-title-garagem p {
+  color: var(--main-text-color);
+  font-size: 16px;
+}
+
+.container-input-data {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#select {
+  background-color: white;
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  border-radius: 1px;
+}
+
+.container-input-data input {
+  background-color: white;
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  border-radius: 1px;
+}
+
+#select option {
+  background-color: white;
+}
+
+.btn-enviar-garagem {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--bg-text-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--bg-text-color);
+  color: var(--main-text-color);
+  letter-spacing: .1rem;
+  font-weight: 600;
+  font-size: 16px;
+  transition: .5s ease;
+}
+
+.btn-enviar-garagem:hover {
+  box-shadow: none;
+}
