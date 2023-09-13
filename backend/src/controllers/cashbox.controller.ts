@@ -1,5 +1,6 @@
 import { Response, Request } from 'express-serve-static-core';
 import CashBoxService from '../services/cashbox.service';
+
 class CashBoxController {
 
   CashBoxService = new CashBoxService();

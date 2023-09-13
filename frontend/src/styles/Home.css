@@ -5,15 +5,15 @@
 
 
 .container-home {
+  display: flex;
   flex-direction: column;
   color: white;
-  text-align: center;
-}
-
-section > .title-playground {
-  font-size: 3rem;
   align-items: center;
   justify-content: center;
+}
+
+.container-home .title-playground {
+  font-size: 50px;
   margin-top: 10vh;
   color: var(--bg-text-color);
 }
@@ -21,8 +21,8 @@ section > .title-playground {
 .container-name {
   display: flex;
   flex-direction: column;
-  height: 79vh;
-  min-width: 90vh;
+  height: 550px;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -36,7 +36,7 @@ section > .title-playground {
 }
 
 .btn-enviar {
-  display: inline-block;
+  display: flex;
   padding: 1rem 2.8rem;
   background: var(--bg-text-color);
   border-radius: 4rem;
@@ -50,4 +50,39 @@ section > .title-playground {
 
 .btn-enviar:hover {
   box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .container-name {
+    height: 300px;
+    width: 100vh;
+  }
+
+  .container-home .title-playground {
+    font-size: 1.5rem;
+  }
+
+  .container-name {
+    height: 300px;
+    width: 100vh;
+  }
+
+  .input-name {
+    width: 200px;
+    height: 20px;
+  }
+
+  .btn-enviar {
+    display: flex;
+    padding: 1rem .8rem;
+    background: var(--bg-text-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--bg-text-color);
+    font-size: 12px;
+    color: white;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+  }
+
 }
