@@ -30,7 +30,7 @@ function Home() {
         />
         <button
         type="button"
-        className="btn-enviar"
+        className="btn-home"
         onClick={ (e) => handleClick(e) }
         >
           Enviar

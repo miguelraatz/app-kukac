@@ -29,14 +29,14 @@
   width: 300px;
 }
 
-.btn-enviar {
+.btn-home {
   display: flex;
   padding: 1rem 2.8rem;
   background: var(--bg-text-color);
   border-radius: 4rem;
   box-shadow: 0 0 1rem var(--bg-text-color);
   font-size: 18px;
-  color: white;
+  color: rgb(0, 0, 0);
   letter-spacing: .1rem;
   font-weight: 600;
   transition: .5s ease;

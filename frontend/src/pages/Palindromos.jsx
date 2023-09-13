@@ -31,58 +31,60 @@ function Palindromos() {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <NavBar />
-      <section className="container-palindromos">
-        <h2>Palíndromos</h2>
-        {result.length === 0 ? (
-          <>
-            <p>Digite dois números com intervalo de sua escolha para verificar todos os Palíndromos.</p>
-            <div className="container-input-numeros">
-              <input
-                value={firstNumber}
-                type="text"
-                placeholder="Digite um número"
-                onChange={ (e) => setFirstNumber(e.target.value)}
-              />
-              <input
-                value={secondNumber}
-                type="text"
-                placeholder="Digite um número"
-                onChange={ (e) => setSecondNumber(e.target.value)}
-              />
-              <button
-                type="button"
-                className="btn-enviar"
-                onClick={ (e) => handleClick(e) }
-              >
-                Enviar
-              </button>
-            </div>
-          </>) : (
+      <div className="container-palindromos">
+        <section className="section-palindromos">
+          <h2>Palíndromos</h2>
+          {result.length === 0 ? (
             <>
-              <p>Números encontrados:</p>
-              <div className="container-numbers-result">
-                {result.map((item) => (
-                  <>
-                    <h3>{`${item}`}</h3>
-                  </>
-                ))}
+              <p>Digite dois números com intervalo de sua escolha para verificar todos os Palíndromos.</p>
+              <div className="container-inputs">
+                <input
+                  value={firstNumber}
+                  type="text"
+                  placeholder="Digite um número"
+                  onChange={ (e) => setFirstNumber(e.target.value)}
+                />
+                <input
+                  value={secondNumber}
+                  type="text"
+                  placeholder="Digite um número"
+                  onChange={ (e) => setSecondNumber(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="btn-palindromos"
+                  onClick={ (e) => handleClick(e) }
+                >
+                  Enviar
+                </button>
               </div>
-              <button
-                type="button"
-                className="btn-enviar"
-                onClick={ (e) => backButton(e) }
-              >
-                Voltar
-              </button>
-            </>
-          )
-        }
-        <ToastComponent />
-      </section>
-    </div>
+            </>) : (
+              <>
+                <p>Números encontrados:</p>
+                <div className="container-numbers-result">
+                  {result.map((item) => (
+                    <>
+                      <h3>{`${item}`}</h3>
+                    </>
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  className="btn-palindromos"
+                  onClick={ (e) => backButton(e) }
+                >
+                  Voltar
+                </button>
+              </>
+            )
+          }
+          <ToastComponent />
+        </section>
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,54 @@
+.section-palindromos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-palindromos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-palindromos h2 {
+  color: var(--bg-text-color);
+  margin-top: 80px;
+  font-size: 35px;
+}
+
+.section-palindromos p {
+  color: var(--main-text-color);
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container-inputs input {
+  text-align: center;
+  margin: 20px 0;
+  height: 25px;
+  width: 300px;
+}
+
+.btn-palindromos {
+  display: flex;
+  padding: 1rem 2.8rem;
+  background: var(--bg-text-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--bg-text-color);
+  font-size: 18px;
+  margin-top: 30px;
+  color: rgb(0, 0, 0);
+  letter-spacing: .1rem;
+  font-weight: 600;
+  transition: .5s ease;
+}
