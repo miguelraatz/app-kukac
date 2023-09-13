@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import '../styles/Palindromos.css';
 import requestApi from "../helpers/requestApi";
+import ToastComponent from "../components/ToastComponent";
+import { toast } from "react-toastify";
 
 function Palindromos() {
 
@@ -16,6 +18,7 @@ function Palindromos() {
   }
 
   const handleClick = async (e) => {
+    if (!firstNumber || !secondNumber) return toast.error(`Preencha todos os campos!`);
     e.preventDefault();
     await fetchPalindromos();
     setFirstNumber('');
@@ -59,7 +62,7 @@ function Palindromos() {
             </div>
           </>) : (
             <>
-              <p>Números Palíndromos encontrados:</p>
+              <p>Números encontrados:</p>
               <div className="container-numbers-result">
                 {result.map((item) => (
                   <>
@@ -77,7 +80,7 @@ function Palindromos() {
             </>
           )
         }
-        
+        <ToastComponent />
       </section>
     </div>
   );

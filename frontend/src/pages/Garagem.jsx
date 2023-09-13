@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import '../styles/Garagem.css'
 import requestApi from "../helpers/requestApi";
+import ToastComponent from "../components/ToastComponent";
+import { toast } from "react-toastify";
 
 function Garagem() {
 
@@ -36,8 +38,9 @@ function Garagem() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    if (!year || !model || !brand) return toast.error(`Preencha todos os campos!`);
     await fetchGaragem();
-    window.alert('Veículo cadastrado com sucesso!');
+    toast.success(`Veículo cadastrado com sucesso!`);
     setVehicle('moto');
     setYear('');
     setDoors('');
@@ -99,6 +102,7 @@ function Garagem() {
           </button>
         </div>
       </form>
+      <ToastComponent />
     </div>
   )
 }

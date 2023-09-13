@@ -2,12 +2,15 @@ import React, { useContext } from 'react';
 import UserContext from '../context/UserContext';
 import '../styles/Home.css'
 import { useHistory } from 'react-router-dom';
+import ToastComponent from '../components/ToastComponent';
+import { toast } from 'react-toastify';
 
 function Home() {
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const history = useHistory();
 
   const handleClick = (e) => {
+    if (!user) return toast.error(`Preencha seu nome!`);
     e.preventDefault();
     history.push('/palindromos');
   }
@@ -33,6 +36,7 @@ function Home() {
           Enviar
         </button>
       </div>
+      <ToastComponent />
     </section>
   );
 }

@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 function Cep() {
 
   const [ceps, setCeps] = useState([]);
-  const [result] = useState([]);
+  const [result, setResult] = useState([]);
+  const [wasFound, setWasFound] = useState(false);
 
   const handleChange = (e, index) => {
     const { value } = e.target;
@@ -29,13 +30,22 @@ function Cep() {
     }
   }
 
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.preventDefault();
     if (ceps.length !== 5) return toast.error(`Preencha todos os campos!`);
     toast.info(`Buscando CEP...`);
     for (const cep of ceps) {
       await fetchCep(cep);
     }
     toast.success(`CEPs encontrados!`);
+    setWasFound(true);
+  }
+
+  const backToForm = (e) => {
+    e.preventDefault();
+    setWasFound(false);
+    setCeps([]);
+    setResult([])
   }
 
 
@@ -43,56 +53,61 @@ function Cep() {
     <div>
       <Header />
       <NavBar />
-      <form className="container-cep">
-        {result.length === 0 ? (
-        <>
-          <div className="container-title-cep">
-            <h2>Consulta CEP</h2>
-            <p>Preencha os campos com os CEPs que deseja consultar.</p>
-          </div>
-          <div className="container-input-ceps">
-            <input
-              type="text"
-              placeholder="CEP 1"
-              onChange={ (e) => handleChange(e, 0) }
-            />
-            <input
-              type="text"
-              placeholder="CEP 2"
-              onChange={ (e) => handleChange(e, 1) }
-            />
-            <input
-              type="text"
-              placeholder="CEP 3"
-              onChange={ (e) => handleChange(e, 2) }
-            />
-            <input
-              type="text"
-              placeholder="CEP 4"
-              onChange={ (e) => handleChange(e, 3) }
-            />
-            <input
-              type="text"
-              placeholder="CEP 5"
-              onChange={ (e) => handleChange(e, 4) }
-            />
-            <button
-              type="button"
-              className="btn-enviar-cep"
-              onClick={ handleClick }
-            >
-              Enviar
-            </button>
-          </div>
-        </>
-        ) : (
-          <>
-            {result.map((dataCep) => (
-            <CardCep key={dataCep.cep} dataCep={dataCep} />
-            ))}
-          </>
-        )}
+      { !wasFound ? (
+        <form className="container-cep">
+        <div className="container-title-cep">
+          <h2>Consulta CEP</h2>
+          <p>Preencha os campos com os CEPs que deseja consultar.</p>
+        </div>
+        <div className="container-input-ceps">
+          <input
+            type="text"
+            placeholder="CEP 1"
+            onChange={ (e) => handleChange(e, 0) }
+          />
+          <input
+            type="text"
+            placeholder="CEP 2"
+            onChange={ (e) => handleChange(e, 1) }
+          />
+          <input
+            type="text"
+            placeholder="CEP 3"
+            onChange={ (e) => handleChange(e, 2) }
+          />
+          <input
+            type="text"
+            placeholder="CEP 4"
+            onChange={ (e) => handleChange(e, 3) }
+          />
+          <input
+            type="text"
+            placeholder="CEP 5"
+            onChange={ (e) => handleChange(e, 4) }
+          />
+          <button
+            type="button"
+            className="btn-enviar-cep"
+            onClick={ (e) => handleClick(e) }
+          >
+            Enviar
+          </button>
+        </div>
       </form>
+      ) : (
+        <div className="container-ceps-founder">
+          <div className="container-cards">
+            {result?.map((cep, index) => <CardCep key={index} dataCep={cep} />)}
+          </div>
+          <button
+            type="button"
+            className="btn-enviar-cep"
+            onClick={ (e) => backToForm(e) }
+          >
+            Voltar
+          </button>
+        </div>
+      )}
       <ToastComponent />
     </div>
   );

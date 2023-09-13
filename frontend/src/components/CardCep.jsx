@@ -1,4 +1,6 @@
-function CardCep(dataCep) {
+import '../styles/CardCep.css';
+
+function CardCep({ dataCep }) {
   const {
     cep,
     logradouro,
@@ -10,7 +12,6 @@ function CardCep(dataCep) {
   } = dataCep;
 
   console.log(dataCep)
-  console.log(dataCep.uf);
 
   return (
     <div className="card-cep">
