@@ -9,5 +9,8 @@
   outline: none;
   scroll-behavior: smooth;
   font-family: 'Poppins', 'sans-serif';
-  background-color: rgb(10, 4, 24);
+}
+
+:root {
+  background-color: black;
 }
