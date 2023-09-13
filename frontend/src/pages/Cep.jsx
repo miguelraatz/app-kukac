@@ -50,58 +50,56 @@ function Cep() {
 
 
   return (
-    <div>
+    <>
       <Header />
       <NavBar />
-      { !wasFound ? (
-        <form className="container-cep">
-        <div className="container-title-cep">
+      {!wasFound ? (
+        <form className="section-cep">
           <h2>Consulta CEP</h2>
           <p>Preencha os campos com os CEPs que deseja consultar.</p>
-        </div>
-        <div className="container-input-ceps">
-          <input
-            type="text"
-            placeholder="CEP 1"
-            onChange={ (e) => handleChange(e, 0) }
-          />
-          <input
-            type="text"
-            placeholder="CEP 2"
-            onChange={ (e) => handleChange(e, 1) }
-          />
-          <input
-            type="text"
-            placeholder="CEP 3"
-            onChange={ (e) => handleChange(e, 2) }
-          />
-          <input
-            type="text"
-            placeholder="CEP 4"
-            onChange={ (e) => handleChange(e, 3) }
-          />
-          <input
-            type="text"
-            placeholder="CEP 5"
-            onChange={ (e) => handleChange(e, 4) }
-          />
-          <button
-            type="button"
-            className="btn-enviar-cep"
-            onClick={ (e) => handleClick(e) }
-          >
-            Enviar
-          </button>
-        </div>
-      </form>
-      ) : (
+          <div className="container-inputs">
+            <input
+              type="text"
+              placeholder="CEP 1"
+              onChange={ (e) => handleChange(e, 0) }
+            />
+            <input
+              type="text"
+              placeholder="CEP 2"
+              onChange={ (e) => handleChange(e, 1) }
+            />
+            <input
+              type="text"
+              placeholder="CEP 3"
+              onChange={ (e) => handleChange(e, 2) }
+            />
+            <input
+              type="text"
+              placeholder="CEP 4"
+              onChange={ (e) => handleChange(e, 3) }
+            />
+            <input
+              type="text"
+              placeholder="CEP 5"
+              onChange={ (e) => handleChange(e, 4) }
+            />
+            <button
+              type="button"
+              className="btn-cep"
+              onClick={ (e) => handleClick(e) }
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+        ) : (
         <div className="container-ceps-founder">
           <div className="container-cards">
             {result?.map((cep, index) => <CardCep key={index} dataCep={cep} />)}
           </div>
           <button
             type="button"
-            className="btn-enviar-cep"
+            className="btn-cep"
             onClick={ (e) => backToForm(e) }
           >
             Voltar
@@ -109,7 +107,7 @@ function Cep() {
         </div>
       )}
       <ToastComponent />
-    </div>
+    </>
   );
 }
 

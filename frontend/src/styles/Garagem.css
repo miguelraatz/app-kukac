@@ -1,8 +1,21 @@
-.container-garagem {
+.section-garagem {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.section-garagem h2 {
+  color: var(--bg-text-color);
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.section-garagem p {
+  color: var(--main-text-color);
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0;
 }
 
 .select-input {

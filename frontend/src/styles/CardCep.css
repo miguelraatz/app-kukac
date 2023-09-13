@@ -1,0 +1,6 @@
+.card-cep {
+  border: 1px solid var(--bg-text-color);
+  margin: 2px;
+  padding: 3px;
+  font-weight: 700;
+}
