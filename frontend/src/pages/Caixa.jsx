@@ -2,16 +2,22 @@ import { useState } from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import '../styles/Caixa.css'
+import requestApi from "../helpers/requestApi";
 
 function Caixa() {
 
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [amountPaid, setAmountPaid] = useState(0);
+  const [result, setResult] = useState([]);
+
+  const fetchCaixa = async () => {
+    const result = await requestApi('caixa', { purchase: purchasePrice, money: amountPaid });
+    setResult(result);
+  }
   
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(purchasePrice);
-    console.log(amountPaid);
+    await fetchCaixa();
   }
 
   return (
