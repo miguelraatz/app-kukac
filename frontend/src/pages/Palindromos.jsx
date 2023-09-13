@@ -2,16 +2,22 @@ import { useState } from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import '../styles/Palindromos.css';
+import requestApi from "../helpers/requestApi";
 
 function Palindromos() {
 
   const [firstNumber, setFirstNumber] = useState('');
   const [secondNumber, setSecondNumber] = useState('');
+  const [result, setResult] = useState([]);
 
-  const handleClick = (e) => {
+  const fetchPalindromos = async () => {
+    const response = await requestApi('palindromos', { start: firstNumber, end: secondNumber });
+    setResult(response);
+  }
+
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(firstNumber);
-    console.log(secondNumber);
+    await fetchPalindromos();
     setFirstNumber('');
     setSecondNumber('');
   }
