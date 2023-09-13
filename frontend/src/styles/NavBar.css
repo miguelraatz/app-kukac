@@ -1,54 +1,55 @@
 .container-nav-bar {
-  position: absolute;
-  left: 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-text-color);
 }
 
 .container-nav-bar ul {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
   justify-content: space-evenly;
   align-items: center;
-  height: 87vh;
-  width: 30vh;
-  background-color: var(--bg-text-color);
 }
 
 .container-nav-bar ul li {
-  text-decoration: none;
-  list-style-type: none;
-  background-color: var(--bg-text-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30vh;
-  height: 100vh;
+  text-decoration: none;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+}
+
+.container-nav-bar ul li .menu-item:hover {
+  background-color: var(--main-text-color);
+  color: var(--bg-text-color);
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-item {
-  background-color: var(--bg-text-color);
   color: var(--main-text-color);
-  font-size: 22px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-nav-bar ul li:hover {
-  background-color: var(--main-text-color);
-  color: var(--bg-text-color);
-  .menu-item {
-    background-color: var(--main-text-color);
-    color: var(--bg-text-color);
-  }
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .ativo {
   background-color: var(--main-text-color);
   color: var(--bg-text-color);
-  width: 30vh;
+  cursor: pointer;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

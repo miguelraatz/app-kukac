@@ -12,5 +12,7 @@
 }
 
 :root {
+  --bg-text-color: #ffe600dc;
+  --main-text-color: rgb(59, 56, 58);
   background-color: black;
 }
