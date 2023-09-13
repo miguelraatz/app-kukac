@@ -2,22 +2,41 @@ import { useState } from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import '../styles/Garagem.css'
+import requestApi from "../helpers/requestApi";
 
 function Garagem() {
 
-  const [vehicle, setVehicle] = useState('carro');
+  const [vehicle, setVehicle] = useState('moto');
   const [year, setYear] = useState('');
   const [doors, setDoors] = useState('');
   const [brand, setBrand] = useState('');
   const [passengers, setPassengers] = useState('');
+  const [model, setModel] = useState('');
+  
+  const fetchGaragem = async () => {
+    const dataMoto = {
+      vehicle,
+      modelo: model,
+      brand,
+      year,
+      passengers,
+    }
 
-  const handleClick = (e) => {
+    const dataCarro = {
+      vehicle,
+      modelo: model,
+      brand,
+      year,
+      doors,
+    }
+
+    const result = await requestApi('garagem', vehicle === 'moto' ? dataMoto : dataCarro);
+    return result;
+  }
+
+  const handleClick = async (e) => {
     e.preventDefault();
-    console.log(vehicle);
-    console.log(year);
-    console.log(doors);
-    console.log(brand);
-    console.log(passengers);
+    await fetchGaragem();
   }
 
   return (
@@ -39,6 +58,7 @@ function Garagem() {
           { vehicle === 'carro' ?
           <input onChange={ (e) => setDoors(e.target.value) } type="text" placeholder="Quantidade de portas" /> :
           <input onChange={ (e) => setPassengers(e.target.value) } type="text" placeholder="Quantidade de passageiros" /> }
+          <input onChange={ (e) => setModel(e.target.value) } type="text" placeholder="Modelo" />
           <input onChange={ (e) => setBrand(e.target.value) } type="text" placeholder="Marca" />
           <button
             type="button"
