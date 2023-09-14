@@ -3,13 +3,18 @@ import { join } from 'path';
 
 const path = '../database/data.json';
 
+const initialData = {
+  moto: [],
+  carro: [],
+};
+
 class Model {
   public readJsonFile = async () => {
     try {
       const contentFile = await fs.readFile(join(__dirname, path), 'utf-8');
       return JSON.parse(contentFile);
     } catch (error) {
-      return null;
+      return initialData;
     }
   };
 
@@ -25,4 +30,3 @@ class Model {
 }
 
 export default Model;
-
