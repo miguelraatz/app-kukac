@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha -r ts-node/register ./tests/**/*$NAME*.{test,spec}.ts -t 10000 --exit",
+    "test": "nyc mocha -r ts-node/register .src/tests/**/*$NAME*.{test,spec}.ts -t 10000 --exit",
     "dev": "nodemon --exec ts-node src/server.ts"
   },
   "keywords": [],
