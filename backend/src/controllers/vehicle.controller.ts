@@ -5,7 +5,9 @@ import Carro from "../classes/Carro";
 import Moto from "../classes/Moto";
 
 class VehicleController {
+
   VehicleService = new VehicleService();
+
   public saveVehicle(req: Request, res: Response) {
     try {
       const { vehicle, ...dadosVeiculo } = req.body as unknown as any;

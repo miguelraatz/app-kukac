@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import { join } from 'path';
 
 const path = '../database/data.json';
+
 class Model {
   public readJsonFile = async () => {
     try {

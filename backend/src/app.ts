@@ -6,7 +6,9 @@ const corsOption = {
 };
 
 class App {
+
   public app: express.Application;
+
   constructor() {
     this.app = express();
     this.app.use(express.json());

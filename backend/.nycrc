@@ -1,0 +1,3 @@
+{
+  "exclude": ["node_modules", "src/classes", "src/database", "src/interfaces", "src/app.ts", "src/models"]
+}
