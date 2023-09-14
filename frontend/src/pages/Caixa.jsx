@@ -70,10 +70,12 @@ function Caixa() {
             <section className="section-caixa">
               <h2>Caixa</h2>
               <p>Troco</p>
-            </section>
+              <h3>Valor da compra: R${Number(purchasePrice).toFixed(2)}</h3>
+              <h3>Valor pago: R${Number(amountPaid).toFixed(2)}</h3>
               <h3>Total de notas de 1 real: {result[1]}</h3>
               <h3>Total de notas de 10 reais: {result[10]}</h3>
               <h3>Total de notas de 100 reais: {result[100]}</h3>
+            </section>
             <button
               type="button"
               className="btn-caixa"

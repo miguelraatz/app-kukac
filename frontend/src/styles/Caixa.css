@@ -20,6 +20,10 @@
   font-size: 35px;
 }
 
+.section-caixa h3 {
+  color: #999898;
+}
+
 .section-caixa p {
   color: var(--main-text-color);
   text-align: center;
