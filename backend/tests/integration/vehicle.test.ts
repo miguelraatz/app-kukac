@@ -36,7 +36,7 @@ describe('VehicleController', () => {
         "wheels": 2
       }
       const response = await chai.request(BASE_URL).post('/garagem').send(moto);
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(201);
       expect(response.body).to.deep.equal(expectedResult);
     });
 
@@ -57,7 +57,7 @@ describe('VehicleController', () => {
 
       const response = await chai.request(BASE_URL).post('/garagem').send(car);
 
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(201);
       expect(response.body).to.deep.equal(expectedResult);
     });
     it('should return an error when the moto passengers are bigger than 2', async () => {

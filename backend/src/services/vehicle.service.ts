@@ -8,6 +8,7 @@ class VehicleService {
     const dataJson = await this.model.readJsonFile();
     dataJson[vehicle].push(dadosVeiculo);
     this.model.writeJsonFile(dataJson);
+    return dadosVeiculo;
   }
 }
 
