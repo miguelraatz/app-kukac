@@ -7,7 +7,7 @@ import PalindromeController from '../../../src/controllers/palindromes.controlle
 import PalindromeService from '../../../src/services/palindromes.service';
 
 chai.use(sinonChai);
-describe('CashBoxService', () => {
+describe('PalindromesController', () => {
   let palindromesController: PalindromeController;
   let palindromesService: PalindromeService;
 
@@ -56,6 +56,6 @@ describe('CashBoxService', () => {
 
     palindromesController.getAllPalindromos(req, res);
 
-    expect(res.status).to.have.been.calledWith(400);
+    expect(res.status).to.have.been.calledWith(500);
   });
 });

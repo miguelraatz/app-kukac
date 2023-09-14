@@ -5,7 +5,7 @@ import chaiHttp from 'chai-http';
 import PalindromeService from '../../../src/services/palindromes.service';
 
 chai.use(chaiHttp);
-describe('CashBoxService', () => {
+describe('PalindromesService', () => {
   let palindromeService: PalindromeService;
 
   beforeEach(() => {
