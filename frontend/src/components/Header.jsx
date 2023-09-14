@@ -9,7 +9,7 @@ function Header() {
     <section className="container-header">
       <h2>Playground</h2>
       <span className="square"></span>
-      <h2>Bem vindo {user}</h2>
+      <h2>Bem-vindo {user}</h2>
     </section>
   )
 }

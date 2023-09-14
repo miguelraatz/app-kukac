@@ -42,8 +42,9 @@
   transition: .5s ease;
 }
 
-.btn-enviar:hover {
+.btn-home:hover {
   box-shadow: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

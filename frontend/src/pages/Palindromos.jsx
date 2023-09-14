@@ -65,11 +65,7 @@ function Palindromos() {
               <>
                 <p>Números encontrados:</p>
                 <div className="container-numbers-result">
-                  {result.map((item) => (
-                    <>
-                      <h3>{`${item}`}</h3>
-                    </>
-                  ))}
+                  {result.join(', ').replace(/,/g, ', ')}
                 </div>
                 <button
                   type="button"

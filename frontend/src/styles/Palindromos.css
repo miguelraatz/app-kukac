@@ -53,8 +53,16 @@
   transition: .5s ease;
 }
 
+.btn-palindromos:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
 .container-numbers-result {
   display: flex;
   color: var(--main-text-color);
   font-weight: 700;
+  max-width: 80%;
+  flex-wrap: wrap;
+  color: #999898;
 }

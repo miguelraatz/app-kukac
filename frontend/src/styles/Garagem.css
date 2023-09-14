@@ -38,3 +38,8 @@
   font-weight: 600;
   transition: .5s ease;
 }
+
+.btn-garagem:hover {
+  box-shadow: none;
+  cursor: pointer;
+}

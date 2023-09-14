@@ -55,3 +55,8 @@
   font-weight: 600;
   transition: .5s ease;
 }
+
+.btn-caixa:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
