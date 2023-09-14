@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 
 class PalindromeService {
 
-  private isPalindrome(num: number): boolean {
+  public isPalindrome(num: number): boolean {
     const numStr = num.toString();
     const reversedNumStr = numStr.split('').reverse().join('');
     return numStr === reversedNumStr;

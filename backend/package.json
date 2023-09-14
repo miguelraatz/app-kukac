@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha -r ts-node/register .src/tests/**/*$NAME*.{test,spec}.ts -t 10000 --exit",
+    "test": "nyc mocha -r ts-node/register ./tests/**/**/*$NAME*.{test,spec}.ts -t 10000 --exit",
     "dev": "nodemon --exec ts-node src/server.ts"
   },
   "keywords": [],
@@ -15,12 +15,14 @@
     "@types/express": "^4.17.17",
     "@types/mocha": "^10.0.1",
     "@types/sinon": "^10.0.16",
+    "@types/sinon-chai": "^3.2.9",
     "chai": "^4.3.8",
     "chai-http": "^4.4.0",
-    "mocha": "^10.2.0",
+    "mocha": "8.4.0",
     "nodemon": "^3.0.1",
     "nyc": "^15.1.0",
-    "sinon": "^15.2.0",
+    "sinon": "11.1.1",
+    "sinon-chai": "3.7.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
