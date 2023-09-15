@@ -3,7 +3,7 @@ ___
 Para iniciar o projeto, siga os passos abaixo:
 
 ```bash
-git clone link_repositorio
+git clone git@github.com:miguelraatz/app-kukac.git
 ```
 Entre no diretório:
 ```bash
